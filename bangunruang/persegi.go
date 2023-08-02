@@ -11,6 +11,7 @@ func CalculateSquare(reader *bufio.Reader) {
 	var side float64
 	var err error
 
+	// Membaca input panjang sisi persegi dan melakukan validasi
 	for {
 		fmt.Print("Masukkan panjang sisi persegi: ")
 		sideInput, _ := reader.ReadString('\n')
@@ -23,7 +24,10 @@ func CalculateSquare(reader *bufio.Reader) {
 		fmt.Println("Error: Masukan harus berupa angka.")
 	}
 
+	// Menghitung luas persegi
 	area := side * side
+
+	// Menghitung keliling persegi
 	perimeter := 4 * side
 
 	fmt.Printf("Luas persegi: %.2f\n", area)

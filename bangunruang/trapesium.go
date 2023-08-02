@@ -3,15 +3,16 @@ package bangunruang
 import (
 	"bufio"
 	"fmt"
+	"go-cli/trim"
 	"math"
 	"strconv"
-	"go-cli/trim"
 )
 
 func CalculateTrapezoid(reader *bufio.Reader) {
 	var top, bottom, height float64
 	var err error
 
+	// Membaca input panjang sisi atas trapesium dan melakukan validasi
 	for {
 		fmt.Print("Masukkan panjang sisi atas trapesium: ")
 		topInput, _ := reader.ReadString('\n')
@@ -24,6 +25,7 @@ func CalculateTrapezoid(reader *bufio.Reader) {
 		fmt.Println("Error: Masukan harus berupa angka.")
 	}
 
+	// Membaca input panjang sisi bawah trapesium dan melakukan validasi
 	for {
 		fmt.Print("Masukkan panjang sisi bawah trapesium: ")
 		bottomInput, _ := reader.ReadString('\n')
@@ -36,6 +38,7 @@ func CalculateTrapezoid(reader *bufio.Reader) {
 		fmt.Println("Error: Masukan harus berupa angka.")
 	}
 
+	// Membaca input tinggi trapesium dan melakukan validasi
 	for {
 		fmt.Print("Masukkan tinggi trapesium: ")
 		heightInput, _ := reader.ReadString('\n')
@@ -48,7 +51,10 @@ func CalculateTrapezoid(reader *bufio.Reader) {
 		fmt.Println("Error: Masukan harus berupa angka.")
 	}
 
+	// Menghitung luas trapesium
 	area := 0.5 * (top + bottom) * height
+
+	// Menghitung keliling trapesium
 	perimeter := top + bottom + 2*math.Sqrt((top-bottom)*(top-bottom)/4+height*height)
 
 	fmt.Printf("Luas trapesium: %.2f\n", area)

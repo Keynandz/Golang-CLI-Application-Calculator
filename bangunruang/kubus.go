@@ -12,6 +12,7 @@ func CalculateCube(reader *bufio.Reader) {
 	var side float64
 	var err error
 
+	// Membaca input panjang sisi kubus dan melakukan validasi
 	for {
 		fmt.Print("Masukkan panjang sisi kubus: ")
 		sideInput, _ := reader.ReadString('\n')
@@ -24,6 +25,7 @@ func CalculateCube(reader *bufio.Reader) {
 		fmt.Println("Error: Masukan harus berupa angka.")
 	}
 
+	// Menghitung volume kubus
 	volume := side * side * side
 	fmt.Printf("Volume kubus: %.2f\n", volume)
 }

@@ -11,6 +11,7 @@ func CalculateRectangle(reader *bufio.Reader) {
 	var length, width float64
 	var err error
 
+	// Membaca input panjang persegi panjang dan melakukan validasi
 	for {
 		fmt.Print("Masukkan panjang persegi panjang: ")
 		lengthInput, _ := reader.ReadString('\n')
@@ -23,6 +24,7 @@ func CalculateRectangle(reader *bufio.Reader) {
 		fmt.Println("Error: Masukan harus berupa angka.")
 	}
 
+	// Membaca input lebar persegi panjang dan melakukan validasi
 	for {
 		fmt.Print("Masukkan lebar persegi panjang: ")
 		widthInput, _ := reader.ReadString('\n')
@@ -35,7 +37,10 @@ func CalculateRectangle(reader *bufio.Reader) {
 		fmt.Println("Error: Masukan harus berupa angka.")
 	}
 
+	// Menghitung luas persegi panjang
 	area := length * width
+
+	// Menghitung keliling persegi panjang
 	perimeter := 2 * (length + width)
 
 	fmt.Printf("Luas persegi panjang: %.2f\n", area)

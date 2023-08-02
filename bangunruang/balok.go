@@ -12,6 +12,7 @@ func CalculateCuboid(reader *bufio.Reader) {
 	var length, width, height float64
 	var err error
 
+	// Membaca input panjang balok dan melakukan validasi
 	for {
 		fmt.Print("Masukkan panjang balok: ")
 		lengthInput, _ := reader.ReadString('\n')
@@ -24,6 +25,7 @@ func CalculateCuboid(reader *bufio.Reader) {
 		fmt.Println("Error: Masukan harus berupa angka.")
 	}
 
+	// Membaca input lebar balok dan melakukan validasi
 	for {
 		fmt.Print("Masukkan lebar balok: ")
 		widthInput, _ := reader.ReadString('\n')
@@ -36,6 +38,7 @@ func CalculateCuboid(reader *bufio.Reader) {
 		fmt.Println("Error: Masukan harus berupa angka.")
 	}
 
+	// Membaca input tinggi balok dan melakukan validasi
 	for {
 		fmt.Print("Masukkan tinggi balok: ")
 		heightInput, _ := reader.ReadString('\n')
@@ -48,6 +51,7 @@ func CalculateCuboid(reader *bufio.Reader) {
 		fmt.Println("Error: Masukan harus berupa angka.")
 	}
 
+	// Menghitung volume balok
 	volume := length * width * height
 	fmt.Printf("Volume balok: %.2f\n", volume)
 }
